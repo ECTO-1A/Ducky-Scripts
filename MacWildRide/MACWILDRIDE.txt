@@ -1,0 +1,76 @@
+REM Title: MacWildRide
+REM Author: Ecto-1A
+REM Description: Opens Fortunate son by CCR, uses say command and whoami
+REM to say Hey ~username~ Enjoy the wild ride, mother fucker! It then builds
+REM a fake terminal window saying the computer is being encrypted. 
+REM Target: MacOS
+REM Version: 1.0
+REM Category: Prank
+
+
+REM Opens a vimeo video of CCR-Fortunate Son and minimizes the window
+DELAY 250
+GUI SPACE
+DELAY 500
+STRING https://vimeo.com/276819104?autoplay=1
+DELAY 500
+ENTER
+DELAY 800
+GUI M
+
+REM Opens Terminal and turns the volme to max
+DELAY 500
+GUI SPACE
+DELAY 1000
+STRING Terminal
+DELAY 250
+ENTER
+DELAY 500
+STRING osascript -e "set Volume 10"
+DELAY 500
+ENTER
+DELAY 250
+
+REM Uses the say command and whoami to get the logged in user name 
+REM and says Hey ~username~ Enjoy the wild ride, mother fucker!
+STRING say Hey
+DELAY 250
+ENTER
+DELAY 500
+STRING whoami | say
+ENTER
+DELAY 500
+STRING say Enjoy the wild ride, mother fucker!
+DELAY 250
+ENTER
+DELAY 500
+
+REM This section clears the terminal window and builds
+REM a fake terminal window saying the drive is encrypting
+STRING clear
+DELAY 250
+ENTER
+DELAY 550
+STRING echo -e "\e[101;30;5m ENCRYPTING DATA ON SYSTEM"
+DELAY 250
+ENTER
+DELAY 250
+STRING '
+DELAY 250
+ENTER
+STRING PASSWORDS: ......10%......50%......100% SUCCESS!
+DELAY 1000
+ENTER
+DELAY 250
+STRING BANK ACCOUNTS: ......10%......50%......100% SUCCESS!
+DELAY 1000
+ENTER
+DELAY 250
+STRING PHOTOS: ......10%......50%......100% SUCCESS!
+DELAY 1000
+ENTER
+DELAY 250
+STRING ~ALL FILES SUCCESSFULLY ENCRYPTED~
+
+
+
